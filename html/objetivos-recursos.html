@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objetivos y Recursos</title>
+    <title>Objetivos y Recursos | GAMESTORE</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -27,13 +27,61 @@
 
     <main>
         <section class="content">
-            <h2>Objetivos y Recursos</h2>
-            <p>Contenido de la página Objetivos y Recursos</p>
+            <header class="page-header">
+                <h2>Objetivos y Recursos</h2>
+                <p>Planificación estratégica y bases tecnológicas del proyecto Desktop.</p>
+            </header>
+
+            <div class="objetivos-container">
+                <div class="section-block">
+                    <div class="text-content">
+                        <h3>Objetivo General del Proyecto</h3>
+                        <p>A la hora de gestionar una tienda de videojuegos con un catálogo amplio de productos y datos de usuarios, es de vital importancia una buena organización para evitar errores y confusiones. Por esa misma razón se plantea una <strong>aplicación de escritorio</strong> para gestionar el trabajo y facilitar las tareas lo máximo posible.</p>
+                        <p>El sistema ofrece una experiencia dual: por una parte, la vista del usuario para consulta de catálogo (título, género, plataforma, precio, etc.), gestión de pedidos y reseñas. Por otro lado, un entorno administrativo potente que permite el control total (CRUD) del catálogo y la gestión de cuentas.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="../img/tienda-mockup.png" alt="Vista previa de la tienda" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+
+                <hr class="separator">
+
+                <div class="section-block reverse">
+                    <div class="text-content">
+                        <h3>Objetivos Específicos y Tecnologías</h3>
+                        <p>Este proyecto se consolida como una solución robusta basada en el ecosistema Java:</p>
+                        <ul class="objetivos-lista">
+                            <li><strong>Stack Tecnológico:</strong> Desarrollo con <strong>JavaFX</strong> para la interfaz, <strong>MySQL</strong> como motor de base de datos y <strong>Hibernate (ORM)</strong> para la persistencia.</li>
+                            <li><strong>Niveles de Acceso:</strong> Implementación de roles <em>User</em> y <em>Admin</em> con procesos de autenticación y registro (Sign Up) seguros.</li>
+                            <li><strong>Funcionalidades de Usuario:</strong> Filtrado avanzado mediante HQL, gestión de carrito de compras, sistema de pedidos y reseñas interactivas.</li>
+                            <li><strong>Herramientas Administrativas:</strong> Control total de inventario y usuarios, además de la generación de informes profesionales en <strong>PDF</strong> mediante JasperReports.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="../img/stack-tech.png" alt="JavaFX, Hibernate y MySQL" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+
+                <div class="extra-info-grid">
+                    <div class="info-card">
+                        <h4>Consultas HQL</h4>
+                        <p>Optimización de búsquedas para listados fluidos y dinámicos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>JasperReports</h4>
+                        <p>Generación de reportes detallados para la toma de decisiones.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Hibernate ORM</h4>
+                        <p>Gestión eficiente de la base de datos relacional.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Proyecto Final. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Proyecto Final - JavaFX GameStore. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
