@@ -39,66 +39,139 @@
       </section>
 
       <section class="content-section">
-        <ol>
-          <li>Costes directos</li>
-          <ol type="a">
-            <li>
-              Mano de obra
-              <p>
-                Preparacion de Stock, montaje, formacion<br />
-                Duracion (80h) x Precio/Hora (13€/h) = 1.040€
-              </p>
-              <p>
-                Desarollo Backend + Frontend<br />
-                Duracion (120h) x Precio/Hora (20€/h) = 2.400€
-              </p>
-            </li>
-            <br />
-            <li>
-              Hardware
-              <p>2 ordenadores gestion = 1.500€</p>
-              <p>
-                PC Desarollo y Portatil auxiliar (3 meses de amortizacion):<br />
-                1.200/(48x3) = 75 € y 850/(48x3) = 53€ respectivamente
-              </p>
-            </li>
-            <br />
-            <li>
-              Sofware y licencias
-              <p>Dominio + hosting profesional (1 año) = 150€</p>
-              <p>Software contabilidad + Antivirus (1 año) = 300€</p>
-            </li>
-            <br />
-            <li>
-              Stock inicial
-              <p>Videojuegos nuevos = 4.500€</p>
-              <p>Consolas = 4.000€</p>
-            </li>
-            <p>Total: 14.018€</p>
-          </ol>
-          <li>Costes indirectos (3 meses)</li>
-          Se estima un porcentaje del 12.1%<br /><br />
-          <p>
-            Electricidad<br />
-            150€/mes x 3 = 450€
-          </p>
-          <p>
-            Internet y Telefono<br />
-            70€/mes x 3 = 210€
-          </p>
-          <p>
-            Agua y Limpieza<br />
-            70€/mes x 3 = 210€
-          </p>
-          <p>Total: 870€</p>
+        <h3>Costes directos</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Descripción</th>
+              <th>Detalle de cálculo</th>
+              <th>Importe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Mano de obra</td>
+              <td>Preparación de stock, montaje y formación</td>
+              <td>Duración (80 h) × 13 €/h</td>
+              <td>1.040 €</td>
+            </tr>
+            <tr>
+              <td>Desarrollo backend y frontend</td>
+              <td>Duración (120 h) × 20 €/h</td>
+              <td>2.400 €</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Hardware</td>
+              <td>2 ordenadores de gestión</td>
+              <td>Equipos para la gestión diaria de la tienda</td>
+              <td>1.500 €</td>
+            </tr>
+            <tr>
+              <td>
+                PC de desarrollo y portátil auxiliar (3 meses de amortización)
+              </td>
+              <td>
+                1.200 € / (48 × 3) = 75 €<br />
+                850 € / (48 × 3) = 53 €
+              </td>
+              <td>128 €</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Software y licencias</td>
+              <td>Dominio + hosting profesional (1 año)</td>
+              <td>Plan anual de dominio y alojamiento</td>
+              <td>150 €</td>
+            </tr>
+            <tr>
+              <td>Software de contabilidad + antivirus (1 año)</td>
+              <td>Licencias anuales</td>
+              <td>300 €</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Stock inicial</td>
+              <td>Videojuegos nuevos</td>
+              <td>Compra inicial de catálogo</td>
+              <td>4.500 €</td>
+            </tr>
+            <tr>
+              <td>Consolas</td>
+              <td>Unidades iniciales para la venta</td>
+              <td>4.000 €</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="total-label">Total costes directos</td>
+              <td class="total-amount">14.018 €</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
 
-          <li>Coste total</li>
-          <p>
-            Suma total de todos los costes:<br />
-            14.018€ + 870€ = 14.888€
-          </p>
-          <h2>Total: 14.888€</h2>
-        </ol>
+      <section class="content-section">
+        <h3>Costes indirectos (3 meses)</h3>
+        <p>Se estima un porcentaje del 12,1 % aplicado a los costes generales.</p>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Detalle de cálculo</th>
+              <th>Importe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Electricidad</td>
+              <td>150 €/mes × 3</td>
+              <td>450 €</td>
+            </tr>
+            <tr>
+              <td>Internet y teléfono</td>
+              <td>70 €/mes × 3</td>
+              <td>210 €</td>
+            </tr>
+            <tr>
+              <td>Agua y limpieza</td>
+              <td>70 €/mes × 3</td>
+              <td>210 €</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2" class="total-label">Total costes indirectos</td>
+              <td class="total-amount">870 €</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="content-section">
+        <h3>Resumen del presupuesto</h3>
+        <table class="budget-table budget-summary">
+          <thead>
+            <tr>
+              <th>Tipo de coste</th>
+              <th>Importe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Costes directos</td>
+              <td>14.018 €</td>
+            </tr>
+            <tr>
+              <td>Costes indirectos</td>
+              <td>870 €</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="total-label">Coste total del proyecto</td>
+              <td class="total-amount">14.888 €</td>
+            </tr>
+          </tfoot>
+        </table>
       </section>
     </main>
 
