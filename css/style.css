@@ -345,6 +345,72 @@ main {
     margin-bottom: 0;
 }
 
+/* BIBLIOGRAFÍA */
+.reference-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.reference-list li {
+    background-color: #fafafa;
+    border-left: 4px solid #e94560;
+    border-radius: 6px;
+    padding: 18px 22px;
+    color: #4a4a5a;
+    line-height: 1.75;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.reference-list li:hover {
+    box-shadow: 0 6px 20px rgba(26, 26, 46, 0.08);
+    transform: translateX(4px);
+}
+
+.reference-list em {
+    color: #1a1a2e;
+    font-style: italic;
+}
+
+.reference-list a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.reference-list a:hover {
+    text-decoration: underline;
+}
+
+.authors-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+}
+
+.authors-list li {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 18px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.authors-list li:hover {
+    background-color: #e94560;
+    transform: translateY(-2px);
+}
+
 /* FOOTER */
 footer {
     background-color: #1a1a2e;
