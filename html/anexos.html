@@ -26,9 +26,436 @@
     </header>
 
     <main>
-        <section class="content">
+        <section class="content-section">
             <h2>Anexos</h2>
-            <p>Contenido de la página Anexos</p>
+            <p class="anexo-descripcion">
+                A continuación se incluye el anexo de documentación técnica del proyecto
+                <strong>Reto2CRUD_DIN_ADT</strong>, una aplicación JavaFX para la gestión
+                de tiendas de videojuegos. Este documento cubre el análisis funcional,
+                el modelo de datos, los casos de uso y la arquitectura del sistema.
+            </p>
+            <p class="anexo-descripcion">
+                También puedes
+                <a href="../pdf/Documentacion_Tecnica_GameStore.pdf" target="_blank" rel="noopener noreferrer">abrir el documento en una nueva pestaña</a>
+                o
+                <a href="../pdf/Documentacion_Tecnica_GameStore.pdf" download>descargarlo en PDF</a>.
+            </p>
+
+            <div class="doc-content">
+                <h1 class="doc-h1">Entregable: Anexo de Documentacion Tecnica</h1>
+
+                <!-- ÍNDICE NAVEGABLE -->
+                <div class="doc-toc" id="doc-toc">
+                    <h3 class="toc-heading">Contenido</h3>
+                    <ol class="toc-list">
+                        <li><a href="#sec1">Introduccion</a></li>
+                        <li><a href="#sec2">Analisis</a>
+                            <ol>
+                                <li><a href="#sec21">Definicion del sistema</a></li>
+                                <li><a href="#sec22">Casos de uso</a></li>
+                                <li><a href="#sec23">Modelo conceptual de datos</a></li>
+                                <li><a href="#sec24">Arquitectura de la solucion</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#sec3">Inventario tecnico resumido</a></li>
+                        <li><a href="#sec4">Observaciones tecnicas</a></li>
+                        <li><a href="#sec5">Conclusion</a></li>
+                    </ol>
+                </div>
+
+                <h2 class="doc-h2" id="sec1">1. Introduccion</h2>
+
+                <p>Este documento describe tecnicamente el proyecto <code>Reto2CRUD_DIN_ADT</code>, una aplicacion de escritorio desarrollada en JavaFX para la gestion de una tienda de videojuegos. El sistema implementa autenticacion, gestion de usuarios, administracion de catalogo, carrito de compra, compras y resenas, apoyandose en Hibernate para el acceso persistente a datos sobre MySQL.</p>
+
+                <p>El objetivo del anexo es dejar definido el alcance funcional, los usuarios del sistema, los casos de uso principales, el modelo conceptual de datos y la arquitectura de software utilizada.</p>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h2 class="doc-h2" id="sec2">2. Analisis</h2>
+
+                <h3 class="doc-h3" id="sec21">2.1. Definicion del sistema</h3>
+
+                <p>El sistema es una aplicacion cliente de escritorio con interfaz grafica JavaFX y almacenamiento persistente en base de datos relacional. La aplicacion se inicia en la ventana de login y, tras autenticarse, deriva el flujo segun el tipo de perfil identificado: usuario o administrador.</p>
+
+                <p>Evidencias tecnicas principales:</p>
+
+                <ul>
+                <li>Punto de entrada: <code>PRG/RetoFinal/src/main/Main.java</code></li>
+                <li>Controladores de interfaz: <code>PRG/RetoFinal/src/controller/</code></li>
+                <li>Entidades y persistencia: <code>PRG/RetoFinal/src/model/</code></li>
+                <li>Vistas FXML: <code>PRG/RetoFinal/src/view/</code></li>
+                <li>Configuracion Hibernate: <code>PRG/RetoFinal/src/hibernate.cfg.xml</code></li>
+                </ul>
+
+                <h3 class="doc-h3">2.1.1. Determinacion del alcance del sistema: descripcion funcional</h3>
+
+                <p>El alcance funcional actual del sistema cubre:</p>
+
+                <ul>
+                <li>Inicio de sesion para usuarios y administradores.</li>
+                <li>Registro de nuevos usuarios.</li>
+                <li>Creacion automatica de un administrador por defecto al arrancar la aplicacion.</li>
+                <li>Consulta del catalogo de videojuegos.</li>
+                <li>Filtrado de videojuegos por nombre, genero y plataforma.</li>
+                <li>Gestion de carrito de compra en memoria durante la sesion.</li>
+                <li>Registro de compras mediante pedidos persistidos en base de datos.</li>
+                <li>Escritura de resenas de videojuegos por parte de usuarios.</li>
+                <li>Modificacion del perfil del usuario autenticado.</li>
+                <li>Eliminacion de la propia cuenta por parte del usuario.</li>
+                <li>Gestion administrativa del catalogo: alta, modificacion y baja de videojuegos.</li>
+                <li>Eliminacion administrativa de cuentas de usuario.</li>
+                <li>Apertura de manuales y documentacion PDF desde la aplicacion.</li>
+                </ul>
+
+                <p>Quedan fuera del alcance visible del proyecto:</p>
+
+                <ul>
+                <li>Aplicacion web o API REST.</li>
+                <li>Pago real con pasarela externa.</li>
+                <li>Cifrado de contrasenas.</li>
+                <li>Generacion operativa de informes JasperReports, aunque las librerias estan incluidas.</li>
+                </ul>
+
+                <h3 class="doc-h3">2.1.2. Identificacion de usuarios</h3>
+
+                <h4 class="doc-h4">Usuario</h4>
+
+                <p>Perfil orientado al cliente final de la tienda. Puede:</p>
+
+                <ul>
+                <li>Registrarse.</li>
+                <li>Iniciar sesion.</li>
+                <li>Consultar el catalogo.</li>
+                <li>Filtrar videojuegos.</li>
+                <li>Anadir productos al carrito.</li>
+                <li>Formalizar compras.</li>
+                <li>Publicar resenas.</li>
+                <li>Modificar sus datos.</li>
+                <li>Eliminar su cuenta.</li>
+                </ul>
+
+                <p>Entidad relacionada: <code>PRG/RetoFinal/src/model/User.java</code></p>
+
+                <h4 class="doc-h4">Administrador</h4>
+
+                <p>Perfil orientado a la gestion del sistema. Puede:</p>
+
+                <ul>
+                <li>Iniciar sesion.</li>
+                <li>Consultar el catalogo.</li>
+                <li>Filtrar videojuegos.</li>
+                <li>Anadir videojuegos.</li>
+                <li>Modificar videojuegos.</li>
+                <li>Eliminar videojuegos.</li>
+                <li>Eliminar cuentas de usuario.</li>
+                </ul>
+
+                <p>Entidad relacionada: <code>PRG/RetoFinal/src/model/Admin.java</code></p>
+
+                <h3 class="doc-h3" id="sec22">2.2. Especificacion de casos de uso (jerarquizada)</h3>
+
+                <h4 class="doc-h4">2.2.1. Casos de uso de autenticacion y acceso</h4>
+
+                <ul>
+                <li>CU-01. Iniciar sesion.</li>
+                <li>CU-02. Registrarse como nuevo usuario.</li>
+                <li>CU-03. Cerrar sesion y volver al menu principal.</li>
+                </ul>
+
+                <p>Controladores relacionados:</p>
+
+                <ul>
+                <li><code>LogInWindowController.java</code></li>
+                <li><code>SignUpWindowController.java</code></li>
+                <li><code>MenuWindowController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.2. Casos de uso de gestion de perfil</h4>
+
+                <ul>
+                <li>CU-04. Modificar datos personales del usuario.</li>
+                <li>CU-05. Eliminar cuenta propia.</li>
+                </ul>
+
+                <p>Controladores relacionados:</p>
+
+                <ul>
+                <li><code>ModifyWindowController.java</code></li>
+                <li><code>DeleteAccountController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.3. Casos de uso de consulta de catalogo</h4>
+
+                <ul>
+                <li>CU-06. Listar videojuegos disponibles.</li>
+                <li>CU-07. Filtrar videojuegos por criterios.</li>
+                <li>CU-08. Ver informacion detallada del videojuego seleccionado.</li>
+                </ul>
+
+                <p>Controladores relacionados:</p>
+
+                <ul>
+                <li><code>ShopWindowController.java</code></li>
+                <li><code>AdminShopController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.4. Casos de uso de compra</h4>
+
+                <ul>
+                <li>CU-09. Anadir videojuego al carrito.</li>
+                <li>CU-10. Modificar cantidades del carrito.</li>
+                <li>CU-11. Eliminar producto del carrito.</li>
+                <li>CU-12. Confirmar compra.</li>
+                <li>CU-13. Registrar pedido en base de datos.</li>
+                </ul>
+
+                <p>Controlador relacionado:</p>
+
+                <ul>
+                <li><code>CartController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.5. Casos de uso de resenas</h4>
+
+                <ul>
+                <li>CU-14. Escribir resena de un videojuego.</li>
+                <li>CU-15. Validar que no exista una resena duplicada para el mismo usuario y videojuego.</li>
+                </ul>
+
+                <p>Controlador relacionado:</p>
+
+                <ul>
+                <li><code>ReviewController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.6. Casos de uso de administracion del catalogo</h4>
+
+                <ul>
+                <li>CU-16. Dar de alta un videojuego.</li>
+                <li>CU-17. Modificar un videojuego existente.</li>
+                <li>CU-18. Eliminar un videojuego.</li>
+                </ul>
+
+                <p>Controladores relacionados:</p>
+
+                <ul>
+                <li><code>AddGamesAdminController.java</code></li>
+                <li><code>ModifyGameAdminController.java</code></li>
+                <li><code>AdminShopController.java</code></li>
+                </ul>
+
+                <h4 class="doc-h4">2.2.7. Casos de uso de administracion de usuarios</h4>
+
+                <ul>
+                <li>CU-19. Buscar usuarios para administracion.</li>
+                <li>CU-20. Eliminar una cuenta de usuario desde el perfil administrador.</li>
+                </ul>
+
+                <p>Controlador relacionado:</p>
+
+                <ul>
+                <li><code>DeleteAccountAdminController.java</code></li>
+                </ul>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h3 class="doc-h3" id="sec23">2.3. Modelo conceptual de datos (incluyendo cardinalidades)</h3>
+
+                <p>El modelo del sistema se organiza alrededor de perfiles, videojuegos, pedidos y resenas.</p>
+
+                <h4 class="doc-h4">Entidades principales</h4>
+
+                <ul>
+                <li><code>Profile</code>: entidad abstracta base con <code>userCode</code>, <code>username</code>, <code>password</code>, <code>email</code>, <code>name</code>, <code>telephone</code>, <code>surname</code>.</li>
+                <li><code>User</code>: hereda de <code>Profile</code> y anade <code>gender</code> y <code>cardNumber</code>.</li>
+                <li><code>Admin</code>: hereda de <code>Profile</code> y anade <code>currentAccount</code>.</li>
+                <li><code>Videogame</code>: representa cada producto del catalogo.</li>
+                <li><code>Order</code>: representa una compra de un usuario sobre un videojuego.</li>
+                <li><code>Review</code>: representa una valoracion de un usuario sobre un videojuego.</li>
+                </ul>
+
+                <h4 class="doc-h4">Cardinalidades</h4>
+
+                <ul>
+                <li><code>Profile</code> 1..1 -> <code>User</code> o <code>Admin</code> por herencia <code>JOINED</code>.</li>
+                <li><code>User</code> 1 -> N <code>Order</code>.</li>
+                <li><code>User</code> 1 -> N <code>Review</code>.</li>
+                <li><code>Videogame</code> 1 -> N <code>Order</code>.</li>
+                <li><code>Videogame</code> 1 -> N <code>Review</code>.</li>
+                <li><code>Order</code> N -> 1 <code>User</code>.</li>
+                <li><code>Order</code> N -> 1 <code>Videogame</code>.</li>
+                <li><code>Review</code> N -> 1 <code>User</code>.</li>
+                <li><code>Review</code> N -> 1 <code>Videogame</code>.</li>
+                </ul>
+
+                <h4 class="doc-h4">Representacion esquematica</h4>
+
+                <pre><code>Profile &lt;|-- User
+Profile &lt;|-- Admin
+User "1" --&gt; "0..*" Order
+Videogame "1" --&gt; "0..*" Order
+User "1" --&gt; "0..*" Review
+Videogame "1" --&gt; "0..*" Review</code></pre>
+
+                <p>Ademas, existe la clase <code>CartItem</code>, que representa elementos del carrito en memoria y no se persiste como entidad JPA.</p>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h3 class="doc-h3" id="sec24">2.4. Arquitectura de software de la solucion</h3>
+
+                <p>La solucion sigue una estructura cercana a MVC para JavaFX, complementada con DAO y ORM.</p>
+
+                <h4 class="doc-h4">2.4.1. Capa de presentacion</h4>
+
+                <p>Compuesta por vistas FXML y controladores JavaFX.</p>
+
+                <p>Vistas principales (13 ventanas):</p>
+
+                <ul>
+                <li><code>LogInWindow.fxml</code> — inicio de sesion</li>
+                <li><code>SignUpWindow.fxml</code> — registro de usuarios</li>
+                <li><code>MenuWindow.fxml</code> — menu principal</li>
+                <li><code>StoreWindow.fxml</code> — tienda para usuarios</li>
+                <li><code>StoreAdminWindow.fxml</code> — tienda para administradores</li>
+                <li><code>CartWindow.fxml</code> — carrito de compra</li>
+                <li><code>ReviewWindow.fxml</code> — resenas de videojuegos</li>
+                <li><code>ModifyWindow.fxml</code> — modificacion del perfil</li>
+                <li><code>DeleteAccount.fxml</code> — eliminacion de cuenta propia</li>
+                <li><code>DeleteAccountAdmin.fxml</code> — eliminacion de cuentas por admin</li>
+                <li><code>AddGamesWindow.fxml</code> — anadir videojuego</li>
+                <li><code>ModifyGameWindow.fxml</code> — modificar videojuego</li>
+                <li><code>HelpWindow.fxml</code> — ayuda y manuales</li>
+                </ul>
+
+                <h4 class="doc-h4">2.4.2. Capa de logica de aplicacion</h4>
+
+                <p>La clase <code>controller.Controller</code> actua como fachada para las operaciones funcionales del sistema, delegando en el DAO de persistencia.</p>
+
+                <p>Responsabilidades principales:</p>
+
+                <ul>
+                <li>Login y registro.</li>
+                <li>Gestion de usuarios.</li>
+                <li>Gestion del catalogo.</li>
+                <li>Creacion de pedidos.</li>
+                <li>Creacion de resenas.</li>
+                </ul>
+
+                <p>Archivo clave: <code>PRG/RetoFinal/src/controller/Controller.java</code></p>
+
+                <h4 class="doc-h4">2.4.3. Capa de persistencia</h4>
+
+                <p>Se implementa mediante el patron DAO con Hibernate ORM:</p>
+
+                <ul>
+                <li>Interfaz DAO: <code>ClassDAO.java</code> — define las operaciones CRUD</li>
+                <li>Implementacion concreta: <code>DBImplementation.java</code> — HQL y SQL nativo</li>
+                <li>Gestion centralizada de sesiones: <code>HibernateSession.java</code> — singleton</li>
+                <li>Configuracion ORM: <code>hibernate.cfg.xml</code> — conexion MySQL, pool C3P0, dialecto</li>
+                </ul>
+
+                <p>Caracteristicas tecnicas:</p>
+
+                <ul>
+                <li>Uso de Hibernate ORM 5.6.15 con MySQL 8</li>
+                <li>Estrategia <code>hbm2ddl.auto=update</code> para generacion automatica del esquema</li>
+                <li>Mapeo por anotaciones JPA con herencia <code>JOINED</code> para perfiles</li>
+                <li>Pool de conexiones C3P0 (min: 5, max: 20)</li>
+                <li>Transacciones gestionadas por sesion (thread)</li>
+                </ul>
+
+                <h4 class="doc-h4">2.4.4. Base de datos</h4>
+
+                <p>El proyecto trabaja con la base de datos <code>videogame_store</code> en MySQL 8.</p>
+
+                <p>Recursos asociados:</p>
+
+                <ul>
+                <li>Configuracion de conexion: <code>PRG/RetoFinal/src/hibernate.cfg.xml</code></li>
+                <li>Script de datos de ejemplo: <code>ADT/videogame_store.sql</code></li>
+                </ul>
+
+                <p>Tablas conceptuales principales:</p>
+
+                <ul>
+                <li><code>PROFILE_</code> — datos comunes de todos los perfiles</li>
+                <li><code>USER_</code> — datos especificos de usuarios</li>
+                <li><code>ADMIN_</code> — datos especificos de administradores</li>
+                <li><code>VIDEOGAME_</code> — catalogo de videojuegos</li>
+                <li><code>ORDER_</code> — pedidos realizados</li>
+                <li><code>REVIEW_</code> — resenas de videojuegos</li>
+                </ul>
+
+                <h4 class="doc-h4">2.4.5. Librerias y dependencias</h4>
+
+                <p>Dependencias observadas en el proyecto (desde <code>nbproject/project.properties</code>):</p>
+
+                <ul>
+                <li><strong>JavaFX</strong> — framework de interfaz grafica</li>
+                <li><strong>Hibernate 5.6.15</strong> + JPA — mapeo objeto-relacional</li>
+                <li><strong>MySQL Connector/J 8.0.15</strong> — conectividad con la base de datos</li>
+                <li><strong>Apache Commons DBCP2 / Pool2</strong> — pool de conexiones</li>
+                <li><strong>TestFX 4.0.13</strong> + <strong>JUnit 4</strong> — pruebas automatizadas</li>
+                <li><strong>JasperReports 6.2.0</strong> — libreria de generacion de informes (incluida)</li>
+                </ul>
+
+                <h4 class="doc-h4">2.4.6. Flujo general de ejecucion</h4>
+
+                <pre><code>[Main.java]
+    |-- 1. Inicializacion de Hibernate (SessionFactory)
+    |-- 2. Creacion o validacion automatica de tablas (hbm2ddl)
+    |-- 3. Creacion o validacion del admin por defecto (admin/admin)
+    |-- 4. Carga de LogInWindow.fxml
+    |-- 5. El usuario interactua con las ventanas JavaFX
+    |-- 6. Los controladores llaman a Controller.java (fachada)
+    |-- 7. Controller delega en ClassDAO / DBImplementation
+    |-- 8. DBImplementation ejecuta HQL contra MySQL via HibernateSession
+    |-- 9. Los resultados vuelven a la interfaz grafica</code></pre>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h2 class="doc-h2" id="sec3">3. Inventario tecnico resumido</h2>
+
+                <h3 class="doc-h3">Paquetes del proyecto</h3>
+
+                <ul>
+                <li><code>main</code> — arranque de la aplicacion y bootstrap de Hibernate</li>
+                <li><code>controller</code> — controladores de interfaz y fachada funcional</li>
+                <li><code>model</code> — entidades JPA, enums, DAO e implementacion de persistencia</li>
+                <li><code>view</code> — pantallas FXML (13 ventanas)</li>
+                <li><code>exception</code> — excepcion personalizada (passwordequalspassword)</li>
+                <li><code>threads</code> — utilidades de hilo (no esencial en el estado actual)</li>
+                </ul>
+
+                <h3 class="doc-h3">Pruebas</h3>
+
+                <p>El proyecto incluye un total de <strong>10 clases de prueba</strong> distribuidas en:</p>
+
+                <ul>
+                <li><strong>Pruebas de interfaz</strong> (TestFX): LogInTest, SignUpTest, MenuTest, ModifyTest, DeleteAccountAdminTest</li>
+                <li><strong>Pruebas de controlador</strong> (JUnit): ShopWindowControllerTest, CartControllerTest, ReviewWindowTest, AdminShopWindowControllerTest</li>
+                </ul>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h2 class="doc-h2" id="sec4">4. Observaciones tecnicas</h2>
+
+                <ul>
+                <li>La aplicacion crea o valida las tablas automaticamente al inicio mediante <code>hbm2ddl.auto=update</code>.</li>
+                <li>Se genera o valida un administrador por defecto con usuario <code>admin</code> y contrasena <code>admin</code> en cada arranque.</li>
+                <li>El carrito de compra no es una entidad persistente, sino un estado temporal de sesion (<code>ArrayList&lt;CartItem&gt; transient</code>).</li>
+                <li>El proyecto incluye manuales PDF y una plantilla JasperReports, aunque no se observa generacion de informes integrada en tiempo de ejecucion.</li>
+                <li>Las credenciales de conexion y las contrasenas de usuario aparecen sin cifrado, aspecto mejorable desde el punto de vista de seguridad.</li>
+                </ul>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+
+                <h2 class="doc-h2" id="sec5">5. Conclusion</h2>
+
+                <p><code>Reto2CRUD_DIN_ADT</code> implementa una solucion de escritorio para la gestion funcional de una tienda de videojuegos, separando interfaz, logica y persistencia. La estructura actual permite justificar tecnicamente el proyecto desde el punto de vista del analisis funcional, el modelo de datos y la arquitectura software, cumpliendo con la base necesaria para un anexo de documentacion tecnica del sistema.</p>
+
+                <p class="doc-back"><a href="#doc-toc">↑ Volver al indice</a></p>
+            </div>
         </section>
     </main>
 

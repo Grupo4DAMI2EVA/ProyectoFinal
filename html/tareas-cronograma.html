@@ -26,16 +26,341 @@
     </header>
 
     <main>
-        <section class="content">
+        <section class="content-section">
             <h2>Tareas y Cronograma</h2>
-            <p>Contenido de la página Tareas y Cronograma</p>
+            <p>
+                Este apartado recoge la planificación del proyecto organizada por fases del ciclo de desarrollo
+                de software. Cada fase incluye las tareas realizadas, las fechas de ejecución, la estimación
+                de esfuerzo en horas y los entregables asociados.
+            </p>
 
-            <div class="pdf-container" style="margin-top:1rem;">
-                <iframe src="../pdf/Reto2CRUD_DIN_ADT.pdf" width="100%" height="700" style="border:1px solid #ccc;">
-                    Este navegador no soporta PDFs. Descarga el PDF desde <a href="../pdf/Reto2CRUD_DIN_ADT.pdf">aquí</a>.
-                </iframe>
-                <p style="font-size:0.9rem;color:#666;margin-top:0.5rem;">Si no se muestra el PDF, copia <strong>Reto2CRUD_DIN_ADT.pdf</strong> desde tu carpeta Descargas a la carpeta <strong>pdf</strong> del proyecto (ruta: ProyectoFinal/pdf/).</p>
+            <!-- TIMELINE -->
+            <div class="timeline">
+
+                <!-- ==================== FASE 1: PLANIFICACIÓN Y DISEÑO ==================== -->
+                <div class="tl-phase">
+                    <div class="tl-header">
+                        <span class="tl-num">Fase 1</span>
+                        <span class="tl-title">Planificación y diseño</span>
+                        <span class="tl-date">20 - 28 Nov 2025</span>
+                        <span class="tl-hours">40 h</span>
+                    </div>
+                    <div class="tl-meta">
+                        <span class="tl-dep">Depende de: —</span>
+                        <span class="tl-deliverable">Entrega: Modelo de datos, Casos de uso</span>
+                    </div>
+                    <ul class="tl-tasks tl-tasks--compact">
+                        <li>Formar equipos y firmar contrato de aprendizaje</li>
+                        <li>Analizar el reto y definir la temática</li>
+                        <li>Crear diagrama de casos de uso</li>
+                        <li>Diseñar el modelo de datos</li>
+                        <li>Diseñar la base de datos relacional</li>
+                        <li>Planificar la base de datos PostgreSQL</li>
+                        <li>Configurar Odoo Projects</li>
+                        <li>Definir paquetes de trabajo y asignar responsables</li>
+                        <li>Registrar diariamente el tiempo en Odoo</li>
+                        <li>Investigar alternativas de temática</li>
+                        <li>Presentar y seleccionar la propuesta</li>
+                    </ul>
+                </div>
+
+                <!-- ==================== FASE 2: DISEÑO DETALLADO ==================== -->
+                <div class="tl-phase">
+                    <div class="tl-header">
+                        <span class="tl-num">Fase 2</span>
+                        <span class="tl-title">Diseño detallado</span>
+                        <span class="tl-date">1 - 12 Dic 2025</span>
+                        <span class="tl-hours">30 h</span>
+                    </div>
+                    <div class="tl-meta">
+                        <span class="tl-dep">Depende de: Fase 1</span>
+                        <span class="tl-deliverable">Entrega: Diagrama de navegación, Diseño detallado</span>
+                    </div>
+                    <ul class="tl-tasks tl-tasks--compact">
+                        <li>Diseñar el diagrama de navegación</li>
+                        <li>Especificar el diseño detallado de cada vista</li>
+                        <li>Diseñar vistas web para Cliente</li>
+                        <li>Diseñar el esquema de colecciones MongoDB</li>
+                        <li>Planificar la estructura del servidor PHP</li>
+                    </ul>
+                </div>
+
+                <div class="tl-break">
+                    <span>🟡 Vacaciones de Navidad: 20 Dic 2025 — 7 Ene 2026</span>
+                </div>
+
+                <!-- ==================== FASE 3: CONSTRUCCIÓN Y PRUEBA ==================== -->
+                <div class="tl-phase tl-phase--master">
+                    <div class="tl-header">
+                        <span class="tl-num">Fase 3</span>
+                        <span class="tl-title">Construcción y prueba</span>
+                        <span class="tl-date">8 Ene - 16 Feb 2026</span>
+                        <span class="tl-hours">96 h</span>
+                    </div>
+                    <div class="tl-meta">
+                        <span class="tl-dep">Depende de: Fase 2</span>
+                        <span class="tl-deliverable">Entrega: Aplicación completa, informes, módulos</span>
+                    </div>
+
+                    <!-- SPRINT 1 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 1</span>
+                            <span class="tl-sprint-title">Fundaciones y autenticación</span>
+                            <span class="tl-sprint-date">8 - 16 Ene</span>
+                            <span class="tl-sprint-hours">40 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Implementar la base de datos MySQL</li>
+                            <li>Crear los enums y la clase CartItem</li>
+                            <li>Implementar la interfaz DAO y DBConnection</li>
+                            <li>Configurar hibernate.cfg.xml</li>
+                            <li>Crear el script SQL con datos de prueba</li>
+                            <li>Configurar el proyecto JavaFX</li>
+                            <li>Implementar la ventana de LogIn</li>
+                            <li>Comenzar el módulo de Odoo</li>
+                            <li>Configurar la base de datos PostgreSQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- SPRINT 2 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 2</span>
+                            <span class="tl-sprint-title">Registro y navegación</span>
+                            <span class="tl-sprint-date">16 - 22 Ene</span>
+                            <span class="tl-sprint-hours">24 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Implementar el registro de usuarios</li>
+                            <li>Implementar el menú principal</li>
+                            <li>Implementar la ventana de tienda / catálogo</li>
+                            <li>Implementar lógica de autenticación</li>
+                            <li>Crear ventana de ayuda</li>
+                            <li>Desarrollar vistas del módulo Odoo</li>
+                        </ul>
+                    </div>
+
+                    <!-- SPRINT 3 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 3</span>
+                            <span class="tl-sprint-title">Carrito, reseñas y pedidos</span>
+                            <span class="tl-sprint-date">22 - 29 Ene</span>
+                            <span class="tl-sprint-hours">20 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Implementar el carrito de compras</li>
+                            <li>Implementar ventana de reseñas</li>
+                            <li>Implementar la ventana de modificación de perfil</li>
+                            <li>Implementar pedidos</li>
+                            <li>Añadir validaciones en todos los formularios</li>
+                        </ul>
+                    </div>
+
+                    <!-- SPRINT 4 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 4</span>
+                            <span class="tl-sprint-title">Panel de administración</span>
+                            <span class="tl-sprint-date">29 Ene - 3 Feb</span>
+                            <span class="tl-sprint-hours">20 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Implementar el panel de administración</li>
+                            <li>Implementar añadir videojuegos</li>
+                            <li>Implementar modificar videojuegos</li>
+                            <li>Implementar eliminar cuentas de administrador</li>
+                            <li>Añadir ThreadConnection para conexiones simultáneas</li>
+                        </ul>
+                    </div>
+
+                    <!-- SPRINT 5 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 5</span>
+                            <span class="tl-sprint-title">Integración y empaquetado</span>
+                            <span class="tl-sprint-date">3 - 9 Feb</span>
+                            <span class="tl-sprint-hours">20 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Integrar JasperReports en JavaFX</li>
+                            <li>Empaquetar la aplicación JavaFX</li>
+                            <li>Implementar la aplicación web Cliente</li>
+                            <li>Implementar el servidor PHP con servicios REST</li>
+                            <li>Completar el módulo Odoo con CRUD completo</li>
+                        </ul>
+                    </div>
+
+                    <!-- SPRINT 6 -->
+                    <div class="tl-sprint">
+                        <div class="tl-sprint-header">
+                            <span class="tl-sprint-num">Sprint 6</span>
+                            <span class="tl-sprint-title">Migración y cierre</span>
+                            <span class="tl-sprint-date">9 - 16 Feb</span>
+                            <span class="tl-sprint-hours">12 h</span>
+                        </div>
+                        <ul class="tl-tasks tl-tasks--compact">
+                            <li>Migrar la aplicación JavaFX a MongoDB</li>
+                            <li>Analizar la estructura actual y diseñar migración</li>
+                            <li>Implementar prueba final y revisión</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- TABLA RESUMEN -->
+            <h3>Resumen de esfuerzo</h3>
+            <div class="tl-resumen">
+                <table class="tl-tabla">
+                    <thead>
+                        <tr>
+                            <th>Fase / Sprint</th>
+                            <th>Semanas</th>
+                            <th>Horas</th>
+                            <th>% del total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>F1. Planificación y diseño</td><td>1</td><td>40</td><td>18%</td></tr>
+                        <tr><td>F2. Diseño detallado</td><td>1.5</td><td>30</td><td>14%</td></tr>
+                        <tr><td>F3. Construcción y prueba</td><td>5.5</td><td>136</td><td>62%</td></tr>
+                        <tr><td class="tl-sprint-row">Sprint 1: Fundaciones</td><td>1</td><td>40</td><td>18%</td></tr>
+                        <tr><td class="tl-sprint-row">Sprint 2: Registro y naveg.</td><td>1</td><td>24</td><td>11%</td></tr>
+                        <tr><td class="tl-sprint-row">Sprint 3: Carrito y reseñas</td><td>1</td><td>20</td><td>9%</td></tr>
+                        <tr><td class="tl-sprint-row">Sprint 4: Admin</td><td>0.5</td><td>20</td><td>9%</td></tr>
+                        <tr><td class="tl-sprint-row">Sprint 5: Integración</td><td>1</td><td>20</td><td>9%</td></tr>
+                        <tr><td class="tl-sprint-row tl-sprint-row--last">Sprint 6: Migración</td><td>1</td><td>12</td><td>6%</td></tr>
+                        <tr><td style="color:#999;">&nbsp;&nbsp;&nbsp;&nbsp;Vacaciones Navidad</td><td>2.5</td><td>—</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th>8 + 2.5 vac</th>
+                            <th>206 h</th>
+                            <th>100%</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- DIAGRAMA GANTT ACTUALIZADO -->
+            <h3>Diagrama de Gantt</h3>
+            <div class="gantt">
+                <div class="gantt-header">
+                    <span class="gantt-label-header">Fase / Sprint</span>
+                    <span class="gantt-weeks">
+                        <span>S1</span><span>S2</span><span>S3</span><span>S4</span>
+                        <span class="gantt-break-label">❄️</span>
+                        <span>S5</span><span>S6</span><span>S7</span><span>S8</span>
+                        <span>S9</span><span>S10</span><span>S11</span>
+                    </span>
+                </div>
+
+                <!-- F1 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">F1. Planificación</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:0%; width:18%; background:#e94560;" title="20-28 Nov"></span>
+                    </span>
+                </div>
+
+                <!-- F2 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">F2. Diseño detallado</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:18%; width:18%; background:#e94560;" title="1-12 Dic"></span>
+                    </span>
+                </div>
+
+                <!-- VACACIONES -->
+                <div class="gantt-row-break">
+                    <span class="gantt-label"></span>
+                    <span class="gantt-track"><span class="gantt-break-text">Vacaciones Navidad</span></span>
+                </div>
+
+                <!-- F3 / Sprint 1 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 1. Fundaciones</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:36%; width:9%; background:#c0392b;" title="8-16 Ene"></span>
+                    </span>
+                </div>
+
+                <!-- F3 / Sprint 2 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 2. Registro</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:45%; width:9%; background:#e74c3c;" title="16-22 Ene"></span>
+                    </span>
+                </div>
+
+                <!-- F3 / Sprint 3 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 3. Carrito</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:54%; width:9%; background:#d35400;" title="22-29 Ene"></span>
+                    </span>
+                </div>
+
+                <!-- F3 / Sprint 4 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 4. Admin</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:63%; width:9%; background:#8e44ad;" title="29 Ene - 3 Feb"></span>
+                    </span>
+                </div>
+
+                <!-- F3 / Sprint 5 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 5. Integración</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:72%; width:9%; background:#2980b9;" title="3-9 Feb"></span>
+                    </span>
+                </div>
+
+                <!-- F3 / Sprint 6 -->
+                <div class="gantt-row">
+                    <span class="gantt-label">Spr 6. Migración</span>
+                    <span class="gantt-track">
+                        <span class="gantt-bar" style="left:81%; width:9%; background:#27ae60;" title="9-16 Feb"></span>
+                    </span>
+                </div>
+
+                <div class="gantt-months">
+                    <span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span>
+                </div>
+            </div>
+
+            <!-- LEYENDA DEPENDENCIAS -->
+            <div class="tl-deps-legend">
+                <strong>Dependencias entre fases:</strong>
+                <span>F1 (Planificación)</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>F2 (Diseño detallado)</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>F3 (Construcción y prueba)</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 1</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 2</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 3</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 4</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 5</span>
+                <span class="tl-dep-flecha">→</span>
+                <span>Sprint 6</span>
+                <span class="tl-dep-arrow">(secuencia lineal)</span>
+            </div>
+
+            <!-- DESCARGA -->
+            <p class="pdf-note" style="margin-top:24px;">
+                Puedes consultar el cronograma detallado en el documento original:
+                <a href="../pdf/Reto_2_CRUD_Avanzado.pdf" download>Descargar PDF del cronograma</a>.
+            </p>
         </section>
     </main>
 

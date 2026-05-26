@@ -187,6 +187,602 @@ main {
 .content-section p:last-child {
     margin-bottom: 0;
 }
+
+.pdf-container {
+    margin-top: 24px;
+}
+
+.pdf-preview {
+    width: 100%;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+}
+
+.pdf-viewer {
+    width: 100%;
+    min-height: 700px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+}
+
+.pdf-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.pdf-note a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* DOC CONTENT (anexos) */
+.doc-content {
+    background: #fff;
+    border: 1px solid #e0e0e8;
+    border-radius: 8px;
+    padding: 36px 40px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.doc-h1 {
+    font-size: 26px;
+    color: #1a1a2e;
+    border-bottom: 3px solid #e94560;
+    padding-bottom: 10px;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.doc-h2 {
+    font-size: 20px;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 6px;
+    margin: 32px 0 16px;
+}
+
+.doc-h3 {
+    font-size: 17px;
+    color: #1a1a2e;
+    margin: 24px 0 12px;
+}
+
+.doc-h4 {
+    font-size: 15px;
+    color: #e94560;
+    margin: 18px 0 10px;
+    font-weight: 700;
+}
+
+.doc-content p {
+    margin-bottom: 10px;
+    color: #444;
+    text-align: justify;
+}
+
+.doc-content ul {
+    margin: 6px 0 14px 22px;
+}
+
+.doc-content ul li {
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.doc-content code {
+    background: #f0f0f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #c00;
+}
+
+.doc-content pre {
+    background: #f7f7fa;
+    padding: 16px 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0 18px;
+    font-size: 13px;
+    border-left: 4px solid #e94560;
+    line-height: 1.5;
+}
+
+.doc-content pre code {
+    background: none;
+    padding: 0;
+    color: #333;
+}
+
+.doc-content hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 24px 0;
+}
+
+.doc-content strong {
+    color: #1a1a2e;
+}
+
+.doc-content a {
+    color: #e94560;
+    text-decoration: none;
+}
+
+.doc-content a:hover {
+    text-decoration: underline;
+}
+
+/* TOC NAVEGABLE (anexos) */
+.doc-toc {
+    background: #f7f7fc;
+    border: 1px solid #e0e0e8;
+    border-radius: 8px;
+    padding: 20px 28px;
+    margin: 0 0 28px;
+    scroll-margin-top: 80px;
+}
+
+.toc-heading {
+    font-size: 16px;
+    color: #1a1a2e;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 8px;
+}
+
+.toc-list {
+    list-style: decimal;
+    padding-left: 22px;
+    margin: 0;
+}
+
+.toc-list ol {
+    list-style: lower-alpha;
+    padding-left: 22px;
+    margin: 4px 0 8px;
+}
+
+.toc-list li {
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.toc-list a {
+    color: #1a1a2e;
+    text-decoration: none;
+    border-bottom: 1px dotted #ccc;
+    transition: color 0.2s;
+}
+
+.toc-list a:hover {
+    color: #e94560;
+    border-bottom-color: #e94560;
+}
+
+.doc-back {
+    text-align: right;
+    font-size: 12px;
+    margin: 16px 0 8px;
+}
+
+.doc-back a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.doc-back a:hover {
+    color: #e94560;
+}
+
+#doc-toc {
+    scroll-margin-top: 80px;
+}
+
+/* TIMELINE (tareas-cronograma) */
+.timeline {
+    margin: 24px 0;
+}
+
+.tl-phase {
+    background: #fff;
+    border: 1px solid #e0e0e8;
+    border-left: 4px solid #e94560;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    padding: 16px 20px;
+    transition: box-shadow 0.2s;
+}
+
+.tl-phase:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.tl-break {
+    background: #fffbe6;
+    border: 1px dashed #f0c040;
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 13px;
+    color: #8a6d00;
+    font-weight: 600;
+}
+
+.tl-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.tl-num {
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tl-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #1a1a2e;
+    flex: 1;
+}
+
+.tl-date {
+    font-size: 11px;
+    color: #888;
+    background: #f5f5f8;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tl-hours {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e94560;
+    background: #fef0f0;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tl-meta {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tl-dep {
+    color: #888;
+}
+
+.tl-deliverable {
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+.tl-tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tl-tasks li {
+    padding: 3px 0 3px 18px;
+    position: relative;
+    font-size: 14px;
+    color: #555;
+}
+
+.tl-tasks li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #e94560;
+    font-weight: bold;
+}
+
+/* TABLA RESUMEN */
+.tl-resumen {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+}
+
+.tl-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tl-tabla th,
+.tl-tabla td {
+    padding: 8px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e8;
+}
+
+.tl-tabla thead th {
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tl-tabla tbody tr:nth-child(even) {
+    background: #f9f9fc;
+}
+
+.tl-tabla tbody tr:hover {
+    background: #f0f0f8;
+}
+
+.tl-sprint-row td:first-child {
+    padding-left: 32px;
+    position: relative;
+    font-size: 12px;
+    color: #555;
+}
+
+.tl-sprint-row td:first-child::before {
+    content: '▸';
+    position: absolute;
+    left: 14px;
+    color: #e94560;
+    font-weight: 700;
+}
+
+.tl-sprint-row--last td:first-child::before {
+    content: '▸';
+}
+
+.tl-tabla tfoot th {
+    background: #f5f5f8;
+    color: #1a1a2e;
+    border-top: 2px solid #1a1a2e;
+    font-size: 13px;
+}
+
+.tl-tabla tfoot th:first-child {
+    text-transform: uppercase;
+}
+
+/* SPRINT (tareas-cronograma) */
+.tl-tasks--compact li {
+    font-size: 12px;
+    padding: 2px 0;
+}
+.tl-tasks--compact li + li {
+    border-top: none;
+}
+
+.tl-sprint {
+    background: #fafbff;
+    border: 1px solid #e8e8f0;
+    border-radius: 6px;
+    margin: 12px 0;
+    padding: 10px 14px;
+}
+
+.tl-sprint-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.tl-sprint-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e94560;
+    text-transform: uppercase;
+}
+
+.tl-sprint-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.tl-sprint-date {
+    font-size: 11px;
+    color: #999;
+    margin-left: auto;
+}
+
+.tl-sprint-hours {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e94560;
+}
+
+.tl-phase--master {
+    border-left: 3px solid #e94560;
+}
+
+/* DEPENDENCIAS */
+.tl-deps-legend {
+    background: #f9f9fc;
+    border: 1px solid #e0e0e8;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin: 16px 0 24px;
+    font-size: 13px;
+    color: #444;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    overflow-x: auto;
+}
+
+.tl-deps-legend strong {
+    color: #1a1a2e;
+}
+
+.tl-dep-arrow {
+    color: #999;
+    font-size: 12px;
+}
+
+.tl-dep-flecha {
+    color: #e94560;
+    font-weight: 700;
+    flex-shrink: 0;
+    padding: 0 8px;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+/* Flecha en objetivos-lista */
+.objetivos-lista li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e94560;
+    font-weight: bold;
+    line-height: inherit;
+}
+
+
+/* GANTT (tareas-cronograma) */
+.gantt {
+    background: #f9f9fc;
+    border: 1px solid #e0e0e8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+}
+
+.gantt-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1a1a2e;
+}
+
+.gantt-label-header {
+    width: 140px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.gantt-weeks {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #999;
+}
+
+.gantt-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.gantt-label {
+    width: 140px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.gantt-track {
+    position: relative;
+    flex: 1;
+    height: 22px;
+    background: #eeeef2;
+    border-radius: 4px;
+}
+
+.gantt-bar {
+    position: absolute;
+    top: 0;
+    height: 22px;
+    border-radius: 4px;
+    opacity: 0.85;
+    min-width: 8px;
+}
+
+.gantt-months {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-left: 140px;
+    font-size: 11px;
+    color: #999;
+}
+
+.gantt-break-label {
+    color: #f0c040;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.gantt-row-break {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.gantt-row-break .gantt-label {
+    visibility: hidden;
+}
+
+.gantt-row-break .gantt-track {
+    background: #fffbe6;
+    border: 1px dashed #f0c040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+}
+
+.gantt-break-text {
+    font-size: 10px;
+    color: #8a6d00;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .gantt-label { width: 80px; font-size: 10px; }
+    .gantt-label-header { width: 80px; font-size: 10px; }
+    .gantt-months { padding-left: 80px; }
+}
+
 /* ==========================================================================
    ESTILOS EXCLUSIVOS PARA OBJETIVOS-RECURSOS.HTML
    ========================================================================== */
@@ -262,14 +858,6 @@ main {
     margin-bottom: 15px;
     position: relative;
     color: #4a4a5a;
-}
-
-.objetivos-lista li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #e94560;
-    font-weight: bold;
 }
 
 /* Grid inferior de tecnologías */
