@@ -8,12 +8,22 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    min-height: 100vh;
     background-color: #f5f5f5;
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(233, 69, 96, 0.08) 0%, rgba(233, 69, 96, 0) 35%),
+        radial-gradient(circle at 85% 5%, rgba(26, 26, 46, 0.08) 0%, rgba(26, 26, 46, 0) 30%),
+        linear-gradient(180deg, #eef0f6 0%, #f7f8fb 45%, #eceff5 100%);
+    background-attachment: fixed;
 }
 
 /* HEADER / NAV */
 header {
-    background-color: #1a1a2e;
+    background: rgba(26, 26, 46, 0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(10, 10, 20, 0.25);
     padding: 0 20px;
     position: sticky;
     top: 0;
@@ -40,38 +50,61 @@ header {
 .nav-menu {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .nav-menu li {
-    border-right: 1px solid #333;
-}
-
-.nav-menu li:last-child {
-    border-right: none;
+    position: relative;
 }
 
 .nav-menu a {
-    color: #ccc;
+    color: #d2d6df;
     text-decoration: none;
     padding: 0 16px;
     display: flex;
     align-items: center;
     height: 60px;
     font-size: 14px;
-    transition: color 0.2s, background-color 0.2s;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background: #e94560;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
     color: #fff;
-    background-color: #e94560;
+    background-color: rgba(233, 69, 96, 0.14);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    transform: scaleX(1);
+}
+
+.nav-menu a:active {
+    transform: translateY(1px);
 }
 
 /* MAIN */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 20px 72px;
     min-height: calc(100vh - 120px);
 }
 
@@ -151,6 +184,12 @@ main {
     padding: 50px 40px;
     border-radius: 6px;
     margin-bottom: 30px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.page-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(26, 26, 46, 0.14);
 }
 
 .page-header h2 {
@@ -169,6 +208,12 @@ main {
     border-radius: 6px;
     padding: 40px;
     margin-bottom: 24px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(26, 26, 46, 0.1);
 }
 
 .content-section h3 {
@@ -921,6 +966,13 @@ main {
     border-left: 4px solid #e94560;
     padding: 20px;
     border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(26, 26, 46, 0.12);
+    background-color: #ffffff;
 }
 
 .card h4 {
@@ -1025,6 +1077,14 @@ main {
     background-color: #fafafa;
 }
 
+.budget-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.budget-table tbody tr:hover {
+    background-color: #f2f4fa;
+}
+
 .budget-table tfoot {
     background-color: #f3f3f3;
     font-weight: bold;
@@ -1046,12 +1106,32 @@ main {
     max-width: 480px;
 }
 
+/* Respeto a accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
 /* FOOTER */
 footer {
     background-color: #1a1a2e;
     color: #aaa;
     text-align: center;
     padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #e94560 0%, #ff7a90 50%, #e94560 100%);
 }
 
 footer a {
@@ -1067,12 +1147,26 @@ footer .footer-name {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 0 10px;
+    }
+
+    .nav-container {
+        overflow-x: auto;
+        scrollbar-width: thin;
+    }
+
+    .nav-menu {
+        min-width: max-content;
+    }
+
     .nav-menu {
         font-size: 12px;
     }
 
     .nav-menu a {
-        padding: 0 10px;
+        padding: 0 12px;
+        height: 56px;
     }
 
     .hero h2 {
