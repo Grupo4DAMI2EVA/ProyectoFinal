@@ -572,7 +572,8 @@ main {
 /* SPRINT (tareas-cronograma) */
 .tl-tasks--compact li {
     font-size: 12px;
-    padding: 2px 0;
+    padding: 2px 0 2px 18px;
+    line-height: 1.5;
 }
 .tl-tasks--compact li + li {
     border-top: none;
