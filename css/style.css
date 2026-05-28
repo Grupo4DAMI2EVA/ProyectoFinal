@@ -18,7 +18,7 @@ body {
 }
 
 /* HEADER / NAV */
-header {
+body > header {
     background: rgba(26, 26, 46, 0.96);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -199,8 +199,12 @@ main {
 }
 
 .page-header p {
-    color: #ccc;
+    color: #fff;
     font-size: 15px;
+}
+
+.content-section .page-header p {
+    color: #fff;
 }
 
 .content-section {
